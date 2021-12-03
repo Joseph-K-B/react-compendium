@@ -1,11 +1,11 @@
 
 function FilterForm({
     types, 
-    filterChange, 
     selectedType, 
     sortOrder, 
-    sortChange,
     sortStat,
+    filterChange, 
+    sortChange,
     statChange
 }) {
     return (
@@ -23,13 +23,17 @@ function FilterForm({
             </select>
             </div>
             <div aria-label='sortOrder'>
-                <select value={sortOrder} onChange={(e) => sortChange(e.target.value)}>
+                <select 
+                    value={sortOrder} 
+                    onChange={(e) => sortChange(e.target.value)}>
                     <option value='asc'>Ascending</option>
                     <option value='desc'>Descending</option>
                 </select>
             </div>
             <div aria-label='sortStat'>
-                <select value={sortStat} onChange={(e) => statChange(e.target.value)}>
+                <select 
+                    value={sortStat} 
+                    onChange={(e) => statChange(e.target.value)}>
                     <option value='attack'>Attack</option>
                     <option value='defense'>Defense</option>
                     <option value='hp'>HP</option>
