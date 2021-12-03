@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import FilterForm from "../Forms/FilterForm";
 import PokemonList from "../PokemonList/PokemonList";
-import { fetchPokemon, fetchTypes } from "../services/pokemon";
+import { fetchFilterTypes, fetchPokemon, fetchTypes } from "../services/pokemon";
 
 function Compendium() {
     const [loading, setLoading] = useState(true);
@@ -28,6 +28,22 @@ function Compendium() {
         };
         getTypes();
     }, []);
+
+    useEffect(() => {
+        const getFilterTypes = async () => {
+            if(!selectedType) return;
+            setLoading(true);
+            if (selectedType !== 'main') {
+                const filterList = await fetchFilterTypes(selectedType);
+                setPokemons(filterList);
+            } else {
+                const pokemonList = await fetchPokemon();
+                setPokemons(pokemonList)
+            }
+            setLoading(false);
+        };
+        getFilterTypes();
+    }, [selectedType])
 
     return(
         <section>

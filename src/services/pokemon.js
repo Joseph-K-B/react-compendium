@@ -17,6 +17,15 @@ export const fetchTypes = async () => {
     const typeMap = await typeData.map((item) =>
      ({type: item.type}));
 
-     console.log('AT FETCH', typeMap)
      return typeMap;
+}
+
+export const fetchFilterTypes = async (type) => {
+    const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?type=${type}`);
+    const filterData = await res.json();
+    const filterMap = filterData.results.map((item) =>
+        pokemonMunger(item));
+
+    console.log('FETCH FILTERED', filterMap);
+    return filterMap;
 }
