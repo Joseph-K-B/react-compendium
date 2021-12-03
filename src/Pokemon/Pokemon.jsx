@@ -13,7 +13,7 @@ function Pokemon({ pokemon }) {
     } = pokemon
 
     return(
-        <figure>
+        <figure key={id}>
             <h2>{name}</h2>
             <img src={pic} alt={name}/>
             <h3>{generation}</h3>
