@@ -1,8 +1,7 @@
 
 
 function Pokemon({ pokemon }) {
-    const { 
-        id, 
+    const {
         name, 
         abilityOne, 
         abilityTwo, 
@@ -13,9 +12,9 @@ function Pokemon({ pokemon }) {
     } = pokemon
 
     return(
-        <figure key={id}>
+        <figure key={pokemon.id} aria-label='pokemonFigure'>
             <h2>{name}</h2>
-            <img src={pic} alt={name}/>
+            <img src={pic} alt={name} aria-label='pokemonName'/>
             <h3>{generation}</h3>
             <ul>
                 <li>Primary type:{typeOne}</li>
