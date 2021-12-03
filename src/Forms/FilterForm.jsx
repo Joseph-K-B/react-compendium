@@ -11,7 +11,7 @@ function FilterForm({
     return (
         <section>
             <h3>Filter by type</h3>
-            <div>
+            <div aria-label='sortType'>
             <select
                 value={selectedType}
                 onChange={(e) => filterChange(e.target.value)}    
@@ -22,13 +22,13 @@ function FilterForm({
                 ))}
             </select>
             </div>
-            <div>
+            <div aria-label='sortOrder'>
                 <select value={sortOrder} onChange={(e) => sortChange(e.target.value)}>
                     <option value='asc'>Ascending</option>
                     <option value='desc'>Descending</option>
                 </select>
             </div>
-            <div>
+            <div aria-label='sortStat'>
                 <select value={sortStat} onChange={(e) => statChange(e.target.value)}>
                     <option value='attack'>Attack</option>
                     <option value='defense'>Defense</option>

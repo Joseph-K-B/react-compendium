@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render form controls 1`] = `
+<div>
+  <section>
+    <h3>
+      Filter by type
+    </h3>
+    <div
+      aria-label="sortType"
+    >
+      <select>
+        <option
+          value="all"
+        >
+          main
+        </option>
+        <option />
+      </select>
+    </div>
+    <div
+      aria-label="sortOrder"
+    >
+      <select>
+        <option
+          value="asc"
+        >
+          Ascending
+        </option>
+        <option
+          value="desc"
+        >
+          Descending
+        </option>
+      </select>
+    </div>
+    <div
+      aria-label="sortStat"
+    >
+      <select>
+        <option
+          value="attack"
+        >
+          Attack
+        </option>
+        <option
+          value="defense"
+        >
+          Defense
+        </option>
+        <option
+          value="hp"
+        >
+          HP
+        </option>
+        <option
+          value="speed"
+        >
+          Speed
+        </option>
+      </select>
+    </div>
+  </section>
+</div>
+`;
