@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import FilterForm from "../Forms/FilterForm";
+import SearchForm from "../Forms/SearchForm";
 import PokemonList from "../PokemonList/PokemonList";
-import { fetchFilterTypes, fetchPokemon, fetchTypes } from "../services/pokemon";
+import { fetchFilterTypes, fetchPokemon, fetchSearchedPokemon, fetchTypes } from "../services/pokemon";
 
 function Compendium() {
     const [loading, setLoading] = useState(true);
     const [pokemons, setPokemons] = useState([]);
     const [types, setTypes] = useState([]);
     const [selectedType, setSelectedType] = useState('main');
+    const [searchName, setSearchName] = useState('')
 
     
     useEffect(() => {
@@ -45,9 +47,28 @@ function Compendium() {
         getFilterTypes();
     }, [selectedType])
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setLoading(true);
+        fetchSearchedPokemon(searchName)
+            .then((searchedPokemon) => {
+                setPokemons(searchedPokemon);
+            })
+            .finally(() => {
+                setLoading(false);
+                setSearchName('');
+                setSelectedType('');
+        });
+    };
+
     return(
         <section>
             <main>
+                <SearchForm
+                    name={searchName}
+                    handleSubmit={handleSubmit}
+                    handleSearchChange={setSearchName}
+                />
                 <FilterForm 
                     types={types}
                     selectedType={selectedType}
