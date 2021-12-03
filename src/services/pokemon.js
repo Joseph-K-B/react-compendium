@@ -36,6 +36,15 @@ export const fetchSearchedPokemon = async (name) => {
     const searchMap = searchData.results.map((item) =>
         pokemonMunger(item));
 
-    console.log('FETCH FILTERED', searchMap);
     return searchMap;
+}
+
+export const fetchSortPokemon = async (sortStat, sortOrder) => {
+    const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?sort=${sortStat}&direction=${sortOrder}`);
+    const sortData = await res.json();
+    const sortMap = await sortData.results.map((item) => 
+        pokemonMunger(item));
+
+    console.log('FETCH FILTERED', sortMap);
+    return sortMap
 }
