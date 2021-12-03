@@ -5,10 +5,11 @@ import { fetchPokemon, fetchTypes } from "../services/pokemon";
 
 function Compendium() {
     const [loading, setLoading] = useState(true);
-    const [pokemons, setPokemons] = useState('');
-    const [types, setTypes] = useState('main');
-    const [selectedType, setSelectedType] = useState('');
+    const [pokemons, setPokemons] = useState([]);
+    const [types, setTypes] = useState([]);
+    const [selectedType, setSelectedType] = useState('main');
 
+    
     useEffect(() => {
         const getPokemon = async () => {
             const pokemonList = await fetchPokemon();
@@ -18,6 +19,7 @@ function Compendium() {
         console.log('AT USE EFFECT', getPokemon());
         getPokemon();
     }, []);
+
 
     useEffect(() => {
         const getTypes = async () => {
