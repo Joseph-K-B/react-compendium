@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render unordered list of pokemon 1`] = `
+<div>
+  <ul
+    aria-label="pokemonList"
+  >
+    <li
+      aria-label="pokemon"
+    >
+      <figure>
+        <h2 />
+        <img />
+        <h3 />
+        <ul>
+          <li>
+            Primary type:
+          </li>
+          <li>
+            Secondary type:
+          </li>
+          <li>
+            abilitiy:
+          </li>
+          <li>
+            ability:
+          </li>
+        </ul>
+      </figure>
+    </li>
+    <li
+      aria-label="pokemon"
+    >
+      <figure>
+        <h2 />
+        <img />
+        <h3 />
+        <ul>
+          <li>
+            Primary type:
+          </li>
+          <li>
+            Secondary type:
+          </li>
+          <li>
+            abilitiy:
+          </li>
+          <li>
+            ability:
+          </li>
+        </ul>
+      </figure>
+    </li>
+  </ul>
+</div>
+`;
