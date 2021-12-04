@@ -6,6 +6,7 @@ function Controls({
     searchName,
     handleSubmit,
     setSearchName,
+    handleSearchChange,
     types,
     selectedType,
     sortOrder,
@@ -20,7 +21,7 @@ function Controls({
                 <SearchForm
                         name={searchName}
                         handleSubmit={handleSubmit}
-                        handleSearchChange={setSearchName}
+                        handleSearchChange={handleSearchChange}
                     />
                     <FilterForm 
                         types={types}

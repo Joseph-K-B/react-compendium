@@ -19,7 +19,6 @@ function Compendium() {
             setPokemons(pokemonList);
             setLoading(false);
         };
-        console.log('AT USE EFFECT', getPokemon());
         getPokemon();
     }, []);
 

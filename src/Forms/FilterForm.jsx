@@ -11,7 +11,8 @@ function FilterForm({
 }) {
     return (
         <section className='filterForm'>
-            <div aria-label='sortType' className='sortType'>            <h3>Filter by type</h3>
+            <div aria-label='sortType' className='sortType'>            
+            <h3>Filter by type</h3>
             <select
                 value={selectedType}
                 onChange={(e) => filterChange(e.target.value)}    
