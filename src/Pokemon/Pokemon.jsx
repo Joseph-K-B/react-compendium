@@ -8,7 +8,7 @@ function Pokemon({ pokemon }) {
         typeOne, 
         typeTwo, 
         pic, 
-        generation 
+        hiddenAbility 
     } = pokemon
 
     return(
@@ -19,12 +19,13 @@ function Pokemon({ pokemon }) {
         >
             <h2>{name}</h2>
             <img src={pic} alt={name} aria-label='pokemonName'/>
-            <h3>{generation}</h3>
+            <h2>Type</h2>
+            <h3>{typeOne}</h3>
             <ul>
-                <li>Primary type:{typeOne}</li>
-                <li>Secondary type:{typeTwo}</li>
-                <li>abilitiy:{abilityOne}</li>
-                <li>ability:{abilityTwo}</li>
+                <li>Secondary type: {typeTwo}</li>
+                <li>abilitiy: {abilityOne}</li>
+                <li>ability: {abilityTwo}</li>
+                <li>hidden: {hiddenAbility}</li>
             </ul>
         </figure>
     )

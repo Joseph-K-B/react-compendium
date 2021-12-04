@@ -2,7 +2,7 @@ import { pokemonMunger } from "../utils/helper";
 
 
 export const fetchPokemon = async () => {
-    const res = await fetch('https://pokedex-alchemy.herokuapp.com/api/pokedex/');
+    const res = await fetch('https://pokedex-alchemy.herokuapp.com/api/pokedex/?perPage=21');
     const pokemonData = await res.json();
     const pokemonMap = await pokemonData.results.map((item) => 
     pokemonMunger(item));
@@ -21,7 +21,7 @@ export const fetchTypes = async () => {
 }
 
 export const fetchFilterTypes = async (type) => {
-    const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?type=${type}`);
+    const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?perPage=21&type=${type}`);
     const filterData = await res.json();
     const filterMap = filterData.results.map((item) =>
         pokemonMunger(item));
@@ -39,7 +39,7 @@ export const fetchSearchedPokemon = async (name) => {
 }
 
 export const fetchSortOrderPokemon = async (sortOrder) => {
-    const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?sort=pokemon&direction=${sortOrder}`);
+    const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?perPage=21&sort=pokemon&direction=${sortOrder}`);
     const orderData = await res.json();
     const orderMap = await orderData.results.map((item) => 
         pokemonMunger(item));
@@ -48,7 +48,7 @@ export const fetchSortOrderPokemon = async (sortOrder) => {
 }
 
 export const fetchSortStatPokemon = async (sortStat) => {
-    const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?sort=${sortStat}&direction=asc`)
+    const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?perPage=21&sort=${sortStat}&direction=asc`)
     const statData = await res.json();
     const statMap = await statData.results.map((item) => 
         pokemonMunger(statMap));
@@ -57,7 +57,7 @@ export const fetchSortStatPokemon = async (sortStat) => {
 }
 
 export const fetchSortPokemon = async (sortStat, sortOrder) => {
-    const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?sort=${sortStat}&direction=${sortOrder}`);
+    const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?perPage=21&sort=${sortStat}&direction=${sortOrder}`);
     const sortData = await res.json();
     const sortMap = await sortData.results.map((item) => 
         pokemonMunger(item));

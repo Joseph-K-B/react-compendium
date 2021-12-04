@@ -9,7 +9,7 @@ export const pokemonMunger = (pokemon) => {
         typeOne: pokemon.type_1,
         typeTwo: pokemon.type_2,
         pic: pokemon.url_image,
-        generation: pokemon.generation_id
+        hiddenAbility: pokemon.ability_hidden
 
     }
 }
