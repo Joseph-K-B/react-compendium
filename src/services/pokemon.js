@@ -25,7 +25,6 @@ export const fetchFilterTypes = async (type) => {
     const filterData = await res.json();
     const filterMap = filterData.results.map((item) =>
         pokemonMunger(item));
-
     
     return filterMap;
 }
@@ -37,6 +36,24 @@ export const fetchSearchedPokemon = async (name) => {
         pokemonMunger(item));
 
     return searchMap;
+}
+
+export const fetchSortOrderPokemon = async (sortOrder) => {
+    const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?sort=pokemon&direction=${sortOrder}`);
+    const orderData = await res.json();
+    const orderMap = await orderData.results.map((item) => 
+        pokemonMunger(item));
+
+    return orderMap;
+}
+
+export const fetchSortStatPokemon = async (sortStat) => {
+    const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?sort=${sortStat}&direction=asc`)
+    const statData = await res.json();
+    const statMap = await statData.results.map((item) => 
+        pokemonMunger(statMap));
+
+    return statMap;
 }
 
 export const fetchSortPokemon = async (sortStat, sortOrder) => {

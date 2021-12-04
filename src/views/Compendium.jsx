@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import Controls from "../Controls/Controls";
 import PokemonList from "../PokemonList/PokemonList";
-import { fetchFilterTypes, fetchPokemon, fetchSearchedPokemon, fetchSortPokemon, fetchTypes } from "../services/pokemon";
+import { fetchFilterTypes, fetchPokemon, fetchSearchedPokemon, fetchSortOrderPokemon, fetchSortPokemon, fetchSortStatPokemon, fetchTypes } from "../services/pokemon";
 
 function Compendium() {
     const [loading, setLoading] = useState(true);
     const [pokemons, setPokemons] = useState([]);
     const [types, setTypes] = useState([]);
-    const [selectedType, setSelectedType] = useState('main');
+    const [selectedType, setSelectedType] = useState('all');
     const [searchName, setSearchName] = useState('')
     const [sortOrder, setSortOrder] = useState('')
     const [sortStat, setSortStat] = useState('')
@@ -35,10 +35,10 @@ function Compendium() {
         const getFilterTypes = async () => {
             if(!selectedType) return;
             setLoading(true);
-            if (selectedType !== 'main') {
+            if (selectedType !== 'all') {
                 const filterList = await fetchFilterTypes(selectedType);
                 setPokemons(filterList);
-            } else if (selectedType === 'main') {
+            } else if (selectedType === 'all') {
                 const pokemonList = await fetchPokemon();
                 setPokemons(pokemonList)
             }
@@ -49,8 +49,20 @@ function Compendium() {
 
     useEffect(() => {
         const getSortPokemon = async () => {
-            const sortList = await fetchSortPokemon(sortStat, sortOrder);
+            if(!sortOrder && !sortStat) return;
+            setLoading(true);
+            if(sortOrder !== '' && sortStat === '') {
+                const orderList = await fetchSortOrderPokemon(sortOrder);
+                setPokemons(orderList); 
+            } else if (sortStat !== '' && sortOrder === '') {
+                const statList = await fetchSortStatPokemon(sortStat);
+                setPokemons(statList);
+            } else {
+                const sortList = await fetchSortPokemon(sortStat, sortOrder);
             setPokemons(sortList)
+            }
+            setLoading(false)
+
         };
         getSortPokemon();
     }, [sortStat, sortOrder])

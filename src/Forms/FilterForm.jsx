@@ -25,12 +25,23 @@ function FilterForm({
             </div>
             <div aria-label='sortOrder' className='sortOrder'>
                 <h3>Sort Order</h3>
-                <select 
-                    value={sortOrder} 
-                    onChange={(e) => sortChange(e.target.value)}>
-                    <option value='asc'>Ascending</option>
-                    <option value='desc'>Descending</option>
-                </select>
+                <label value='asc'>Ascending</label>
+                <input
+                    type='radio' 
+                    value='asc' 
+                    onChange={(e) => sortChange(e.target.value)}
+                    checked={sortOrder === 'asc'}
+                    >
+                </input>
+                <label value='desc'>Descending</label>
+                    <input
+                    type='radio' 
+                    value='desc' 
+                    onChange={(e) => sortChange(e.target.value)}
+                    checked={sortOrder === 'desc'}    
+                >
+                    {/* <option value='desc'>Descending</option> */}
+                </input>
             </div>
             <div aria-label='sortStat' className='sortStat'>
                 <h3>Sort Stats</h3>
