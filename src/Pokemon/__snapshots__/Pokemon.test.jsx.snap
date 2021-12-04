@@ -4,6 +4,7 @@ exports[`should render individual pokemon 1`] = `
 <div>
   <figure
     aria-label="pokemonFigure"
+    class="pokemonFigure"
   >
     <h2 />
     <img

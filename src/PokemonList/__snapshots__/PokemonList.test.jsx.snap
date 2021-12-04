@@ -2,14 +2,16 @@
 
 exports[`should render unordered list of pokemon 1`] = `
 <div>
-  <ul
+  <section
     aria-label="pokemonList"
+    class="pokemonList"
   >
-    <li
+    <div
       aria-label="pokemon"
     >
       <figure
         aria-label="pokemonFigure"
+        class="pokemonFigure"
       >
         <h2 />
         <img
@@ -31,12 +33,13 @@ exports[`should render unordered list of pokemon 1`] = `
           </li>
         </ul>
       </figure>
-    </li>
-    <li
+    </div>
+    <div
       aria-label="pokemon"
     >
       <figure
         aria-label="pokemonFigure"
+        class="pokemonFigure"
       >
         <h2 />
         <img
@@ -58,7 +61,7 @@ exports[`should render unordered list of pokemon 1`] = `
           </li>
         </ul>
       </figure>
-    </li>
-  </ul>
+    </div>
+  </section>
 </div>
 `;

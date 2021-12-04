@@ -1,17 +1,18 @@
 import Pokemon from "../Pokemon/Pokemon";
+import './PokemonList.css'
 
 function PokemonList({ pokemons }) {
     return (
-        <ul aria-label='pokemonList' key='pokemonList'>
+        <section className='pokemonList' aria-label='pokemonList'>
             {pokemons.map((pokemon) => {
                 return (
-                    <li key={pokemon.id} aria-label='pokemon'>
+                    <div key={pokemon.id} aria-label='pokemon'>
                         <Pokemon pokemon={pokemon}/>
-                    </li>
+                    </div>
                 )
 
             })}
-        </ul>
+        </section>
     )
 }
 

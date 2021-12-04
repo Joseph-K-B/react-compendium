@@ -4,20 +4,27 @@ exports[`should render input field and button for search 1`] = `
 <div>
   <form
     aria-label="searchForm"
+    class="searchForm"
   >
     <h3>
       Search
     </h3>
-    <label
-      for="search"
+    <div
+      class="inputDiv"
     >
-      Name:
-    </label>
-    <input
-      aria-label="inputField"
-      type="text"
-      value=""
-    />
+      <label
+        class="searchLabel"
+        for="search"
+      >
+        Name:
+      </label>
+      <input
+        aria-label="inputField"
+        class="searchInput"
+        type="text"
+        value=""
+      />
+    </div>
     <button
       aria-label="button"
     >

@@ -1,0 +1,27 @@
+.filterForm{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 50%;
+    border: solid red 0.25rem;
+}
+
+.sortType{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 7%;
+}
+
+.sortOrder{
+    display: flex;
+    flex-direction: column;
+    margin: 7%;
+}
+
+.sortStat{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 7%;
+}

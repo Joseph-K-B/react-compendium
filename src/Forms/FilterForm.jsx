@@ -1,3 +1,4 @@
+import './FilterForm.css';
 
 function FilterForm({
     types, 
@@ -9,9 +10,8 @@ function FilterForm({
     statChange
 }) {
     return (
-        <section>
-            <h3>Filter by type</h3>
-            <div aria-label='sortType'>
+        <section className='filterForm'>
+            <div aria-label='sortType' className='sortType'>            <h3>Filter by type</h3>
             <select
                 value={selectedType}
                 onChange={(e) => filterChange(e.target.value)}    
@@ -22,7 +22,8 @@ function FilterForm({
                 ))}
             </select>
             </div>
-            <div aria-label='sortOrder'>
+            <div aria-label='sortOrder' className='sortOrder'>
+                <h3>Sort Order</h3>
                 <select 
                     value={sortOrder} 
                     onChange={(e) => sortChange(e.target.value)}>
@@ -30,7 +31,8 @@ function FilterForm({
                     <option value='desc'>Descending</option>
                 </select>
             </div>
-            <div aria-label='sortStat'>
+            <div aria-label='sortStat' className='sortStat'>
+                <h3>Sort Stats</h3>
                 <select 
                     value={sortStat} 
                     onChange={(e) => statChange(e.target.value)}>

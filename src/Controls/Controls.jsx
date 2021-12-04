@@ -1,5 +1,6 @@
 import FilterForm from "../Forms/FilterForm";
 import SearchForm from "../Forms/SearchForm";
+import './Controls.css';
 
 function Controls({
     searchName,
@@ -15,20 +16,22 @@ function Controls({
 }) {
     return(
         <>
-            <SearchForm
-                    name={searchName}
-                    handleSubmit={handleSubmit}
-                    handleSearchChange={setSearchName}
-                />
-                <FilterForm 
-                    types={types}
-                    selectedType={selectedType}
-                    sortOrder={sortOrder}
-                    sortAttribute={sortStat}
-                    filterChange={filterChange}
-                    sortChange={sortChange}
-                    statChange={statChange}
-                />
+            <section className='controls'>
+                <SearchForm
+                        name={searchName}
+                        handleSubmit={handleSubmit}
+                        handleSearchChange={setSearchName}
+                    />
+                    <FilterForm 
+                        types={types}
+                        selectedType={selectedType}
+                        sortOrder={sortOrder}
+                        sortAttribute={sortStat}
+                        filterChange={filterChange}
+                        sortChange={sortChange}
+                        statChange={statChange}
+                    />
+            </section>
         </>
     )
     

@@ -2,13 +2,17 @@
 
 exports[`should render form controls 1`] = `
 <div>
-  <section>
-    <h3>
-      Filter by type
-    </h3>
+  <section
+    class="filterForm"
+  >
     <div
       aria-label="sortType"
+      class="sortType"
     >
+                  
+      <h3>
+        Filter by type
+      </h3>
       <select>
         <option
           value="all"
@@ -20,7 +24,11 @@ exports[`should render form controls 1`] = `
     </div>
     <div
       aria-label="sortOrder"
+      class="sortOrder"
     >
+      <h3>
+        Sort Order
+      </h3>
       <select>
         <option
           value="asc"
@@ -36,7 +44,11 @@ exports[`should render form controls 1`] = `
     </div>
     <div
       aria-label="sortStat"
+      class="sortStat"
     >
+      <h3>
+        Sort Stats
+      </h3>
       <select>
         <option
           value="attack"

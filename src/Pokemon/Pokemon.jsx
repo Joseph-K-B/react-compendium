@@ -1,4 +1,4 @@
-
+import './Pokemon.css';
 
 function Pokemon({ pokemon }) {
     const {
@@ -12,7 +12,11 @@ function Pokemon({ pokemon }) {
     } = pokemon
 
     return(
-        <figure key={pokemon.id} aria-label='pokemonFigure'>
+        <figure 
+            key={pokemon.id} 
+            aria-label='pokemonFigure'
+            className='pokemonFigure'    
+        >
             <h2>{name}</h2>
             <img src={pic} alt={name} aria-label='pokemonName'/>
             <h3>{generation}</h3>

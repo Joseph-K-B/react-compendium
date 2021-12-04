@@ -1,0 +1,5 @@
+.controls{
+    display: flex;
+    flex-direction: row;
+    border: solid green 0.25rem;
+}
