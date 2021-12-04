@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Controls from "../Controls/Controls";
 import PokemonList from "../PokemonList/PokemonList";
-import { fetchFilterTypes, fetchPokemon, fetchSearchedPokemon, fetchSortOrderPokemon, fetchSortPokemon, fetchSortStatPokemon, fetchTypes } from "../services/pokemon";
+import { fetchFilterTypes, fetchPokemon, fetchSearchedPokemon, fetchSortOrderPokemon, fetchSortOrderTypesPokemon, fetchSortPokemon, fetchSortStatPokemon, fetchSortStatTypesPokemon, fetchSortTypesPokemon, fetchTypes } from "../services/pokemon";
 
 function Compendium() {
     const [loading, setLoading] = useState(true);
@@ -50,22 +50,40 @@ function Compendium() {
     useEffect(() => {
         const getSortPokemon = async () => {
             if(!sortOrder && !sortStat) return;
-            setLoading(true);
-            if(sortOrder !== '' && sortStat === '') {
+                setLoading(true);
+            if(!selectedType && sortOrder !== '' && sortStat === '') {
                 const orderList = await fetchSortOrderPokemon(sortOrder);
-                setPokemons(orderList); 
-            } else if (sortStat !== '' && sortOrder === '') {
+                setPokemons(orderList);
+            } else if (!selectedType && sortStat !== '' && sortOrder === '') {
                 const statList = await fetchSortStatPokemon(sortStat);
                 setPokemons(statList);
+            } else if (!selectedType && sortStat !== '' && sortOrder !== '') {
+                const sortList = await fetchSortPokemon(sortOrder, sortStat);
+                setPokemons(sortList)
+            }
+                setLoading(false);
+        };
+        getSortPokemon()
+    }, [selectedType, sortOrder, sortStat]) 
+
+    useEffect(() => {
+        const getSortTypePokemon = async () => {
+            if(!sortOrder && !sortStat) return;
+            setLoading(true);            
+             if(sortOrder !== '' && sortStat === '') {
+                const orderTypeList = await fetchSortOrderTypesPokemon(selectedType, sortOrder);
+                setPokemons(orderTypeList); 
+            } else if (sortStat !== '' && sortOrder === '') {
+                const statTypeList = await fetchSortStatTypesPokemon(selectedType, sortStat);
+                setPokemons(statTypeList);
             } else {
-                const sortList = await fetchSortPokemon(sortStat, sortOrder);
-            setPokemons(sortList)
+                const sortTypeList = await fetchSortTypesPokemon(selectedType, sortStat, sortOrder);
+                setPokemons(sortTypeList)
             }
             setLoading(false)
-
         };
-        getSortPokemon();
-    }, [sortStat, sortOrder])
+        getSortTypePokemon();
+    }, [selectedType, sortStat, sortOrder])
 
     const handleSubmit = (e) => {
         e.preventDefault();

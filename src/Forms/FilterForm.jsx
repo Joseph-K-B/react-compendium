@@ -17,7 +17,7 @@ function FilterForm({
                 value={selectedType}
                 onChange={(e) => filterChange(e.target.value)}    
             >
-                <option value='all' key='all'>main</option>
+                <option value='all' key='all'>All</option>
                 {types.map(({type}) => (
                     <option value={type} key={type}>{type}</option>
                 ))}
