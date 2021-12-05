@@ -13,17 +13,23 @@ function Controls({
     sortStat,
     filterChange,
     sortChange,
-    statChange 
+    statChange,
+    page,
+    handlePageChange 
 }) {
     return(
         <>
             <section className='controls'>
-                <SearchForm
+                <div className='searchDiv'>
+                    <SearchForm
                         name={searchName}
                         handleSubmit={handleSubmit}
                         handleSearchChange={handleSearchChange}
                     />
-                    <FilterForm 
+                </div>
+                <div className='filterDiv'>
+                    <FilterForm
+                        page={page} 
                         types={types}
                         selectedType={selectedType}
                         sortOrder={sortOrder}
@@ -31,7 +37,9 @@ function Controls({
                         filterChange={filterChange}
                         sortChange={sortChange}
                         statChange={statChange}
+                        handlePageChange={handlePageChange}
                     />
+                </div>
             </section>
         </>
     )

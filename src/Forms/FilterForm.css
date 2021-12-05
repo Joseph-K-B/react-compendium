@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     text-align: center;
-    width: 50%;
+    width: 100%;
     border: solid red 0.25rem;
 }
 
@@ -10,18 +10,24 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: 7%;
+    margin: 5%;
 }
 
 .sortOrder{
     display: flex;
     flex-direction: column;
-    margin: 7%;
+    margin: 5%;
 }
 
 .sortStat{
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: 7%;
+    margin: 5%;
+}
+
+.pageBtn {
+    max-height: 3rem;
+    max-width: 5rem;
+    margin: 5%;
 }

@@ -7,7 +7,9 @@ function FilterForm({
     sortStat,
     filterChange, 
     sortChange,
-    statChange
+    statChange,
+    page,
+    handlePageChange
 }) {
     return (
         <section className='filterForm'>
@@ -22,25 +24,32 @@ function FilterForm({
                     <option value={type} key={type}>{type}</option>
                 ))}
             </select>
-            </div>
+            <button 
+                className='pageBtn'
+                value={page}
+                onClick={() => handlePageChange(page --)}
+            >
+                Previous Page
+            </button>
+            </div>                
             <div aria-label='sortOrder' className='sortOrder'>
                 <h3>Sort Order</h3>
+                
                 <label value='asc'>Ascending</label>
                 <input
                     type='radio' 
                     value='asc' 
                     onChange={(e) => sortChange(e.target.value)}
                     checked={sortOrder === 'asc'}
-                    >
+                >
                 </input>
                 <label value='desc'>Descending</label>
-                    <input
+                <input
                     type='radio' 
                     value='desc' 
                     onChange={(e) => sortChange(e.target.value)}
                     checked={sortOrder === 'desc'}    
                 >
-                    {/* <option value='desc'>Descending</option> */}
                 </input>
             </div>
             <div aria-label='sortStat' className='sortStat'>
@@ -53,7 +62,14 @@ function FilterForm({
                     <option value='hp'>HP</option>
                     <option value='speed'>Speed</option>
                 </select>
-            </div>
+            <button 
+                className='pageBtn'
+                value={page}
+                onClick={() => handlePageChange(page ++)}
+            >
+                Next Page
+            </button>
+            </div>            
         </section>
     );
 };

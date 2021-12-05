@@ -8,19 +8,20 @@ function Compendium() {
     const [pokemons, setPokemons] = useState([]);
     const [types, setTypes] = useState([]);
     const [selectedType, setSelectedType] = useState('all');
-    const [searchName, setSearchName] = useState('')
-    const [sortOrder, setSortOrder] = useState('')
-    const [sortStat, setSortStat] = useState('')
+    const [searchName, setSearchName] = useState('');
+    const [sortOrder, setSortOrder] = useState('');
+    const [sortStat, setSortStat] = useState('');
+    const [page, setPage] = useState(1);
 
     
     useEffect(() => {
         const getPokemon = async () => {
-            const pokemonList = await fetchPokemon();
+            const pokemonList = await fetchPokemon(page);
             setPokemons(pokemonList);
             setLoading(false);
         };
         getPokemon();
-    }, []);
+    }, [page]);
 
 
     useEffect(() => {
@@ -40,7 +41,7 @@ function Compendium() {
                 setPokemons(filterList);
             } else if (selectedType === 'all') {
                 const pokemonList = await fetchPokemon();
-                setPokemons(pokemonList)
+                setPokemons(pokemonList);
             }
             setLoading(false);
         };
@@ -48,29 +49,29 @@ function Compendium() {
     }, [selectedType]);
 
     useEffect(() => {
-        const getSortPokemon = async () => {
-            if(!sortOrder && !sortStat) return;
+        const getSortPokemon =  async () => {
+            if(selectedType === 'all' && !sortOrder && !sortStat) return;
                 setLoading(true);
-            if(!selectedType && sortOrder !== '' && sortStat === '') {
+            if(selectedType ==='all' && sortOrder !== '' && sortStat === '') {
                 const orderList = await fetchSortOrderPokemon(sortOrder);
                 setPokemons(orderList);
-            } else if (!selectedType && sortStat !== '' && sortOrder === '') {
+            } else if (selectedType ==='all' && sortStat !== '' && sortOrder === '') {
                 const statList = await fetchSortStatPokemon(sortStat);
                 setPokemons(statList);
-            } else if (!selectedType && sortStat !== '' && sortOrder !== '') {
+            } else if (selectedType ==='all' && sortStat !== '' && sortOrder !== '') {
                 const sortList = await fetchSortPokemon(sortOrder, sortStat);
-                setPokemons(sortList)
-            }
+                setPokemons(sortList);
+            } else
                 setLoading(false);
         };
         getSortPokemon()
-    }, [selectedType, sortOrder, sortStat]) 
+    }, [selectedType, sortOrder, sortStat]);
 
     useEffect(() => {
         const getSortTypePokemon = async () => {
-            if(!sortOrder && !sortStat) return;
+            if(!selectedType && !sortOrder && !sortStat) return;
             setLoading(true);            
-             if(sortOrder !== '' && sortStat === '') {
+             if(selectedType && sortOrder !== '' && sortStat === '') {
                 const orderTypeList = await fetchSortOrderTypesPokemon(selectedType, sortOrder);
                 setPokemons(orderTypeList); 
             } else if (sortStat !== '' && sortOrder === '') {
@@ -78,12 +79,12 @@ function Compendium() {
                 setPokemons(statTypeList);
             } else {
                 const sortTypeList = await fetchSortTypesPokemon(selectedType, sortStat, sortOrder);
-                setPokemons(sortTypeList)
+                setPokemons(sortTypeList);
             }
-            setLoading(false)
+            setLoading(false);
         };
         getSortTypePokemon();
-    }, [selectedType, sortStat, sortOrder])
+    }, [selectedType, sortStat, sortOrder]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -114,13 +115,15 @@ function Compendium() {
                     sortChange={setSortOrder}
                     sortAttribute={sortStat}
                     statChange={setSortStat}
+                    page={page}
+                    handlePageChange={setPage}
                 />
                 {loading ? (<h1>Loading...</h1>) : (
                     <PokemonList pokemons={pokemons} />
                 )}
             </main>
         </section>
-    )
-}
+    );
+};
 
 export default Compendium;

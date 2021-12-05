@@ -1,8 +1,8 @@
 import { pokemonMunger } from "../utils/helper";
 
 
-export const fetchPokemon = async () => {
-    const res = await fetch('https://pokedex-alchemy.herokuapp.com/api/pokedex/?perPage=21');
+export const fetchPokemon = async (page) => {
+    const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?page=${page}&perPage=21`);
     const pokemonData = await res.json();
     const pokemonMap = await pokemonData.results.map((item) => 
     pokemonMunger(item));
@@ -20,7 +20,7 @@ export const fetchTypes = async () => {
      return typeMap;
 }
 
-export const fetchFilterTypes = async (type) => {
+export const fetchFilterTypes = async (page, type) => {
     const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?perPage=21&type=${type}`);
     const filterData = await res.json();
     const filterMap = filterData.results.map((item) =>
@@ -38,7 +38,7 @@ export const fetchSearchedPokemon = async (name) => {
     return searchMap;
 }
 
-export const fetchSortOrderPokemon = async (sortOrder) => {
+export const fetchSortOrderPokemon = async (page, sortOrder) => {
     const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?perPage=21&sort=pokemon&direction=${sortOrder}`);
     const orderData = await res.json();
     const orderMap = await orderData.results.map((item) => 
