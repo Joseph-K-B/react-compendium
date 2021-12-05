@@ -62,6 +62,9 @@ exports[`should render sort form controls 1`] = `
           Speed
         </option>
       </select>
+      <button>
+        Reset
+      </button>
     </div>
   </section>
 </div>
