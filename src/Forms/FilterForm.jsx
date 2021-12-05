@@ -15,6 +15,7 @@ function FilterForm({
         <section className='filterForm'>
             <div aria-label='sortType' className='sortType'>            
             <h3>Filter by type</h3>
+            <span className='selectSpan'></span>
             <select
                 className='dropDown'
                 value={selectedType}
@@ -63,6 +64,7 @@ function FilterForm({
             </div>
             <div aria-label='sortStat' className='sortStat'>
                 <h3>Sort Stats</h3>
+                <span className='selectSpan'></span>
                 <select
                     className='dropDown' 
                     value={sortStat} 

@@ -1,12 +1,12 @@
-.filterForm{
+.filterForm {
     display: flex;
     flex-direction: row;
     text-align: center;
     width: 100%;
-    border: solid red 0.25rem;
+    /* border: solid red 0.25rem; */
 }
 
-.sortType{
+.sortType {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -28,7 +28,7 @@
     background-color: white;
 }
 
-.sortOrder{
+.sortOrder {
     display: flex;
     flex-direction: column;
     margin: 5%;
@@ -43,6 +43,8 @@
 }
 
 .sortStat select {
+    color: white;
+    background-color: black;
     text-align: center;
     height: 2rem;
     width: 7rem;
@@ -50,8 +52,8 @@
 }
 
 .sortStat select:hover {
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: white;
 }
 
 .pageBtn {
@@ -59,3 +61,66 @@
     max-width: 5rem;
     margin: 5%;
 }
+
+.sortType .selectSpan {
+    position: absolute;
+    height: 1rem;
+    bottom: 3rem;
+    right: 0.25rem;
+    top: 52.75%;
+    width: 2rem;
+    pointer-events: none;
+}
+
+.sortType .selectSpan:before {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    top: 25%;
+    right: 2.5%;
+    border-top: 0.75rem solid red;
+    border-left: 0.65rem solid transparent;
+    border-right: 0.65rem solid transparent;
+}
+
+.sortType .selectSpan:after {
+    content: '';
+    position: absolute;
+    top: 25%;
+    pointer-events: none;
+    border-top: 0.35rem solid #fff;
+    border-left: 0.35rem solid transparent;
+    border-right: 0.35rem solid transparent;
+ }
+
+.sortStat .selectSpan {
+    position: absolute;
+    height: 1rem;
+    bottom: 3rem;
+    right: 0.25rem;
+    top: 52.75%;
+    width: 2rem;
+    pointer-events: none;
+}
+
+.sortStat .selectSpan:before {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    top: 25%;
+    right: 2.5%;
+    /* margin-top: 0%; */
+    border-top: 0.75rem solid red;
+    border-left: 0.65rem solid transparent;
+    border-right: 0.65rem solid transparent;
+}
+
+.sortStat .selectSpan:after {
+    content: '';
+    position: absolute;
+    top: 25%;
+    pointer-events: none;
+    border-top: 0.35rem solid #fff;
+    border-left: 0.35rem solid transparent;
+    border-right: 0.35rem solid transparent;
+ }
