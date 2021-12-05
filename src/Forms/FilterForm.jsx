@@ -37,14 +37,7 @@ function FilterForm({
             <div aria-label='sortOrder' className='sortOrder'>
                 <h3>Sort Order</h3>
                 
-                {/* <label value=''>Standard</label>
-                <input
-                    type='radio' 
-                    value='' 
-                    onChange={(e) => sortChange(e.target.value)}
-                    checked={sortOrder === ''}
-                >
-                </input> */}
+
                 <label value='asc'>Ascending</label>
                 <input
                     type='radio' 

@@ -16,8 +16,9 @@
 }
 
 .sortType select {
-    color: white;
-    background-color: black;
+    color: #D3D0CB;
+    background-color: #393E41;
+    box-shadow: 0 0 5px 3px red;
     text-align: center;
     height: 2rem;
     width: auto;
@@ -26,7 +27,7 @@
 
 .sortType select:hover {
     color: black;
-    background-color: white;
+    background-color: #D3D0CB;
 }
 
 .sortOrder {
@@ -45,7 +46,8 @@
 
 .sortStat select {
     color: white;
-    background-color: black;
+    background-color: #393E41;
+    box-shadow: 0 0 5px 3px red;
     text-align: center;
     height: 2rem;
     width: 7rem;
@@ -54,7 +56,7 @@
 
 .sortStat select:hover {
     color: black;
-    background-color: white;
+    background-color: #D3D0CB;
 }
 
 .pageBtn {
