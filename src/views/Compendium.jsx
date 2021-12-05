@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import Controls from "../Controls/Controls";
 import PokemonList from "../PokemonList/PokemonList";
+import './Compendium.css'
 import { 
     fetchFilterTypes, 
     fetchPokemon, 
-    // fetchPokemonPage, 
     fetchSearchedPokemon, 
     fetchSortOrderPokemon, 
     fetchSortOrderTypesPokemon, 
@@ -14,7 +14,6 @@ import {
     fetchSortTypesPokemon, 
     fetchTypes 
 } from "../services/pokemon";
-import './Compendium.css'
 
 function Compendium() {
     const [loading, setLoading] = useState(true);
@@ -24,7 +23,6 @@ function Compendium() {
     const [searchName, setSearchName] = useState('');
     const [sortOrder, setSortOrder] = useState('');
     const [sortStat, setSortStat] = useState('');
-    // const [page, setPage] = useState(1);
 
     
     useEffect(() => {
@@ -113,12 +111,24 @@ function Compendium() {
         });
     };
 
+    const handleReset = async () => {
+        setLoading(true);
+        const refreshPokemon = await fetchPokemon();
+        setPokemons(refreshPokemon);
+        setSelectedType('')
+        setSearchName('');
+        setSortOrder('');
+        setSortStat('');
+        setLoading(false)        
+    };
+
     return(
         <section>
             <main>
                 <Controls
                     name={searchName}
                     handleSubmit={handleSubmit}
+                    handleReset={handleReset}
                     handleSearchChange={setSearchName}
                     types={types}
                     selectedType={selectedType}
@@ -127,8 +137,6 @@ function Compendium() {
                     sortChange={setSortOrder}
                     sortAttribute={sortStat}
                     statChange={setSortStat}
-                    // page={page}
-                    // handlePageChange={setPage}
                 />
                 {loading ? (<h1>Loading...</h1>) : (
                     <PokemonList pokemons={pokemons} />

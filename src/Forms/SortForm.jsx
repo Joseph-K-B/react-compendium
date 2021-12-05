@@ -6,6 +6,7 @@ function SortForm ({
     sortStat,
     sortChange,
     statChange,
+    handleReset
 }) {
     return (
         <>
@@ -40,7 +41,8 @@ function SortForm ({
                         <option value='hp'>HP</option>
                         <option value='speed'>Speed</option>
                 </select>
-            </div>            
+            <button onClick={handleReset}>Reset</button>   
+            </div>
         </section>
         </>
     )

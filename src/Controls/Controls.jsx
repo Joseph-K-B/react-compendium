@@ -14,6 +14,7 @@ function Controls({
     filterChange,
     sortChange,
     statChange,
+    handleReset
 }) {
     return(
         <>
@@ -36,8 +37,9 @@ function Controls({
                         sortAttribute={sortStat}
                         sortChange={sortChange}
                         statChange={statChange}
+                        handleReset={handleReset}
                     />
-                </div>
+                </div>                
             </section>
         </>
     );
