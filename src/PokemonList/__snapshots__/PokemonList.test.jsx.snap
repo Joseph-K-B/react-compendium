@@ -17,19 +17,22 @@ exports[`should render unordered list of pokemon 1`] = `
         <img
           aria-label="pokemonName"
         />
+        <h2>
+          Type
+        </h2>
         <h3 />
         <ul>
           <li>
-            Primary type:
+            Secondary type: 
           </li>
           <li>
-            Secondary type:
+            abilitiy: 
           </li>
           <li>
-            abilitiy:
+            ability: 
           </li>
           <li>
-            ability:
+            hidden: 
           </li>
         </ul>
       </figure>
@@ -45,19 +48,22 @@ exports[`should render unordered list of pokemon 1`] = `
         <img
           aria-label="pokemonName"
         />
+        <h2>
+          Type
+        </h2>
         <h3 />
         <ul>
           <li>
-            Primary type:
+            Secondary type: 
           </li>
           <li>
-            Secondary type:
+            abilitiy: 
           </li>
           <li>
-            abilitiy:
+            ability: 
           </li>
           <li>
-            ability:
+            hidden: 
           </li>
         </ul>
       </figure>

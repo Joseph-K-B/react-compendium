@@ -73,8 +73,9 @@ function Compendium() {
             } else if (selectedType ==='all' && sortStat !== '' && sortOrder !== '') {
                 const sortList = await fetchSortPokemon(sortOrder, sortStat);
                 setPokemons(sortList);
-            } else
-                setLoading(false);
+            }
+            setLoading(false);
+            
         };
         getSortPokemon()
     }, [selectedType, sortOrder, sortStat]);
@@ -89,10 +90,10 @@ function Compendium() {
             } else if (sortStat !== '' && sortOrder === '') {
                 const statTypeList = await fetchSortStatTypesPokemon(selectedType, sortStat);
                 setPokemons(statTypeList);
-            } else {
+            } else if (selectedType && sortStat !== '' && sortOrder !== '' ){
                 const sortTypeList = await fetchSortTypesPokemon(selectedType, sortStat, sortOrder);
                 setPokemons(sortTypeList);
-            }
+            } 
             setLoading(false);
         };
         getSortTypePokemon();

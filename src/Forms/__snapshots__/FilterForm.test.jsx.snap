@@ -9,15 +9,19 @@ exports[`should render form controls 1`] = `
       aria-label="sortType"
       class="sortType"
     >
-                  
       <h3>
         Filter by type
       </h3>
-      <select>
+      <span
+        class="selectSpan"
+      />
+      <select
+        class="dropDown"
+      >
         <option
           value="all"
         >
-          main
+          All
         </option>
         <option />
       </select>
@@ -29,18 +33,24 @@ exports[`should render form controls 1`] = `
       <h3>
         Sort Order
       </h3>
-      <select>
-        <option
-          value="asc"
-        >
-          Ascending
-        </option>
-        <option
-          value="desc"
-        >
-          Descending
-        </option>
-      </select>
+      <label
+        value="asc"
+      >
+        Ascending
+      </label>
+      <input
+        type="radio"
+        value="asc"
+      />
+      <label
+        value="desc"
+      >
+        Descending
+      </label>
+      <input
+        type="radio"
+        value="desc"
+      />
     </div>
     <div
       aria-label="sortStat"
@@ -49,7 +59,12 @@ exports[`should render form controls 1`] = `
       <h3>
         Sort Stats
       </h3>
-      <select>
+      <span
+        class="selectSpan"
+      />
+      <select
+        class="dropDown"
+      >
         <option
           value="attack"
         >
