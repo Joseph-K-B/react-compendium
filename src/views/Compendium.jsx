@@ -1,7 +1,20 @@
 import { useEffect, useState } from "react";
 import Controls from "../Controls/Controls";
 import PokemonList from "../PokemonList/PokemonList";
-import { fetchFilterTypes, fetchPokemon, fetchSearchedPokemon, fetchSortOrderPokemon, fetchSortOrderTypesPokemon, fetchSortPokemon, fetchSortStatPokemon, fetchSortStatTypesPokemon, fetchSortTypesPokemon, fetchTypes } from "../services/pokemon";
+import { 
+    fetchFilterTypes, 
+    fetchPokemon, 
+    // fetchPokemonPage, 
+    fetchSearchedPokemon, 
+    fetchSortOrderPokemon, 
+    fetchSortOrderTypesPokemon, 
+    fetchSortPokemon, 
+    fetchSortStatPokemon, 
+    fetchSortStatTypesPokemon, 
+    fetchSortTypesPokemon, 
+    fetchTypes 
+} from "../services/pokemon";
+import './Compendium.css'
 
 function Compendium() {
     const [loading, setLoading] = useState(true);
@@ -11,18 +24,17 @@ function Compendium() {
     const [searchName, setSearchName] = useState('');
     const [sortOrder, setSortOrder] = useState('');
     const [sortStat, setSortStat] = useState('');
-    const [page, setPage] = useState(1);
+    // const [page, setPage] = useState(1);
 
     
     useEffect(() => {
         const getPokemon = async () => {
-            const pokemonList = await fetchPokemon(page);
+            const pokemonList = await fetchPokemon();
             setPokemons(pokemonList);
-            setLoading(false);
-        };
+            setLoading(false);      
+        }
         getPokemon();
-    }, [page]);
-
+    }, []);
 
     useEffect(() => {
         const getTypes = async () => {
@@ -115,8 +127,8 @@ function Compendium() {
                     sortChange={setSortOrder}
                     sortAttribute={sortStat}
                     statChange={setSortStat}
-                    page={page}
-                    handlePageChange={setPage}
+                    // page={page}
+                    // handlePageChange={setPage}
                 />
                 {loading ? (<h1>Loading...</h1>) : (
                     <PokemonList pokemons={pokemons} />

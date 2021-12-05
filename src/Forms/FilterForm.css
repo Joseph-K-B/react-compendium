@@ -7,10 +7,25 @@
 }
 
 .sortType{
+    position: relative;
     display: flex;
     flex-direction: column;
     text-align: center;
     margin: 5%;
+}
+
+.sortType select {
+    color: white;
+    background-color: black;
+    text-align: center;
+    height: 2rem;
+    width: auto;
+    -webkit-appearance: none;
+}
+
+.sortType select:hover {
+    color: black;
+    background-color: white;
 }
 
 .sortOrder{
@@ -19,11 +34,24 @@
     margin: 5%;
 }
 
-.sortStat{
+.sortStat {
+    position: relative;
     display: flex;
     flex-direction: column;
     text-align: center;
     margin: 5%;
+}
+
+.sortStat select {
+    text-align: center;
+    height: 2rem;
+    width: 7rem;
+    -webkit-appearance: none;
+}
+
+.sortStat select:hover {
+    color: white;
+    background-color: black;
 }
 
 .pageBtn {

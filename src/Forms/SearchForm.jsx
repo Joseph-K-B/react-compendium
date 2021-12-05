@@ -7,9 +7,8 @@ function SearchForm({ name, handleSubmit, handleSearchChange }) {
             aria-label='searchForm'
             className='searchForm'    
         >
-            <h3>Search</h3>
-            <div className='inputDiv'>
-            <label htmlFor='search' className='searchLabel'>Name:</label>
+            <h3>Search By Name</h3>
+            <label htmlFor='search' className='searchLabel'></label>
             <input 
             type='text'
             className='searchInput'
@@ -17,8 +16,7 @@ function SearchForm({ name, handleSubmit, handleSearchChange }) {
             onChange={(e) => handleSearchChange(e.target.value)}
             value={name}
             />
-            </div>
-            <button aria-label='button'>Submit</button>
+            <button aria-label='button' className='searchBtn'><span>Submit</span></button>
         </form>
     )
 }

@@ -1,7 +1,17 @@
 import { pokemonMunger } from "../utils/helper";
 
 
-export const fetchPokemon = async (page) => {
+export const fetchPokemon = async () => {
+    const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?&perPage=21`);
+    const pokemonData = await res.json();
+    const pokemonMap = await pokemonData.results.map((item) => 
+    pokemonMunger(item));
+
+
+    return pokemonMap
+}
+
+export const fetchPokemonPage = async (page) => {
     const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?page=${page}&perPage=21`);
     const pokemonData = await res.json();
     const pokemonMap = await pokemonData.results.map((item) => 
@@ -21,7 +31,7 @@ export const fetchTypes = async () => {
 }
 
 export const fetchFilterTypes = async (page, type) => {
-    const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?perPage=21&type=${type}`);
+    const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?page=${page}&perPage=21&type=${type}`);
     const filterData = await res.json();
     const filterMap = filterData.results.map((item) =>
         pokemonMunger(item));
@@ -38,7 +48,7 @@ export const fetchSearchedPokemon = async (name) => {
     return searchMap;
 }
 
-export const fetchSortOrderPokemon = async (page, sortOrder) => {
+export const fetchSortOrderPokemon = async (sortOrder) => {
     const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?perPage=21&sort=pokemon&direction=${sortOrder}`);
     const orderData = await res.json();
     const orderMap = await orderData.results.map((item) => 
@@ -79,7 +89,6 @@ export const fetchSortPokemon = async (sortStat, sortOrder) => {
     const sortMap = await sortData.results.map((item) => 
         pokemonMunger(item));
 
-    console.log('FETCH FILTERED', sortMap);
     return sortMap
 }
 
@@ -89,6 +98,5 @@ export const fetchSortTypesPokemon = async (type, sortStat, sortOrder) => {
     const sortMap = await sortData.results.map((item) => 
         pokemonMunger(item));
 
-    console.log('FETCH FILTERED', sortMap);
     return sortMap
 }
