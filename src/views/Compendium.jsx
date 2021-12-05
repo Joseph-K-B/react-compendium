@@ -49,6 +49,8 @@ function Compendium() {
             if (selectedType !== 'all') {
                 const filterList = await fetchFilterTypes(selectedType);
                 setPokemons(filterList);
+                // setSortOrder('');
+                // setSortStat('');
             } else if (selectedType === 'all') {
                 const pokemonList = await fetchPokemon();
                 setPokemons(pokemonList);
@@ -108,6 +110,7 @@ function Compendium() {
                 setSearchName('');
                 setSelectedType('');
                 setSortOrder('');
+                setSortStat('')
         });
     };
 
