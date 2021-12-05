@@ -41,7 +41,7 @@ function SortForm ({
                         <option value='hp'>HP</option>
                         <option value='speed'>Speed</option>
                 </select>
-            <button onClick={handleReset}>Reset</button>   
+            <button onClick={handleReset} className='resetBtn'><span>Reset</span></button>   
             </div>
         </section>
         </>
