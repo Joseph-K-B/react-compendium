@@ -7,7 +7,7 @@ exports[`should render input field and button for search 1`] = `
     class="searchForm"
   >
     <h3>
-      Search By Name
+      Name
     </h3>
     <label
       class="searchLabel"

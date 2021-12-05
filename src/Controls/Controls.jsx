@@ -1,11 +1,11 @@
 import FilterForm from "../Forms/FilterForm";
 import SearchForm from "../Forms/SearchForm";
+import SortForm from "../Forms/SortForm";
 import './Controls.css';
 
 function Controls({
     searchName,
     handleSubmit,
-    setSearchName,
     handleSearchChange,
     types,
     selectedType,
@@ -14,8 +14,6 @@ function Controls({
     filterChange,
     sortChange,
     statChange,
-    page,
-    handlePageChange 
 }) {
     return(
         <>
@@ -29,21 +27,21 @@ function Controls({
                 </div>
                 <div className='filterDiv'>
                     <FilterForm
-                        page={page} 
                         types={types}
                         selectedType={selectedType}
+                        filterChange={filterChange}                        
+                    />
+                    <SortForm
                         sortOrder={sortOrder}
                         sortAttribute={sortStat}
-                        filterChange={filterChange}
                         sortChange={sortChange}
                         statChange={statChange}
-                        handlePageChange={handlePageChange}
                     />
                 </div>
             </section>
         </>
-    )
+    );
     
-}
+};
 
 export default Controls;

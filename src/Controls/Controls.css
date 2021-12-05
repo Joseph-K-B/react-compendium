@@ -7,9 +7,15 @@
 }
 
 .filterDiv{
+    display: flex;
+    flex-direction: row;
     width: 100%;
 }
 
-.searchDiv {
+.filterForm {
     width: 35%;
+}
+
+.searchDiv {
+    width: 40%;
 }

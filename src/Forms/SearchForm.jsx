@@ -7,7 +7,7 @@ function SearchForm({ name, handleSubmit, handleSearchChange }) {
             aria-label='searchForm'
             className='searchForm'    
         >
-            <h3>Search By Name</h3>
+            <h3>Name</h3>
             <label htmlFor='search' className='searchLabel'></label>
             <input 
             type='text'

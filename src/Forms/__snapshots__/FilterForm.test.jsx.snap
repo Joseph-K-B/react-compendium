@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render form controls 1`] = `
+exports[`should render filter form controls 1`] = `
 <div>
   <section
     class="filterForm"
@@ -10,11 +10,8 @@ exports[`should render form controls 1`] = `
       class="sortType"
     >
       <h3>
-        Filter by type
+        Type
       </h3>
-      <span
-        class="selectSpan"
-      />
       <select
         class="dropDown"
       >
@@ -24,67 +21,6 @@ exports[`should render form controls 1`] = `
           All
         </option>
         <option />
-      </select>
-    </div>
-    <div
-      aria-label="sortOrder"
-      class="sortOrder"
-    >
-      <h3>
-        Sort Order
-      </h3>
-      <label
-        value="asc"
-      >
-        Ascending
-      </label>
-      <input
-        type="radio"
-        value="asc"
-      />
-      <label
-        value="desc"
-      >
-        Descending
-      </label>
-      <input
-        type="radio"
-        value="desc"
-      />
-    </div>
-    <div
-      aria-label="sortStat"
-      class="sortStat"
-    >
-      <h3>
-        Sort Stats
-      </h3>
-      <span
-        class="selectSpan"
-      />
-      <select
-        class="dropDown"
-      >
-        <option
-          value="attack"
-        >
-          Attack
-        </option>
-        <option
-          value="defense"
-        >
-          Defense
-        </option>
-        <option
-          value="hp"
-        >
-          HP
-        </option>
-        <option
-          value="speed"
-        >
-          Speed
-        </option>
       </select>
     </div>
   </section>
