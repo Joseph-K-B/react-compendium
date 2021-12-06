@@ -1,5 +1,6 @@
 import Pokemon from "../Pokemon/Pokemon";
-import './PokemonList.css'
+import './PokemonList.css';
+import PropTypes from 'prop-types';
 
 function PokemonList({ pokemons }) {
     return (
@@ -14,6 +15,22 @@ function PokemonList({ pokemons }) {
             })}
         </section>
     )
+}
+
+PokemonList.propTypes = {
+    pokemons: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            name: PropTypes.string.isRequired,
+            typeOne: PropTypes.string.isRequired,
+            typeTwo: PropTypes.string.isRequired,
+            abilityOne: PropTypes.string.isRequired,
+            abilityTwo: PropTypes.string.isRequired,
+            hiddenAbility: PropTypes.string.isRequired,
+            pic: PropTypes.string.isRequired,
+        })
+    ).isRequired,
+    
 }
 
 export default PokemonList
