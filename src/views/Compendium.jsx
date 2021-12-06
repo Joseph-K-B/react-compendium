@@ -112,14 +112,7 @@ function Compendium() {
     };
 
     const handleReset = async () => {
-        setLoading(true);
-        const refreshPokemon = await fetchPokemon();
-        setPokemons(refreshPokemon);
-        setSelectedType('')
-        setSearchName('');
-        setSortOrder('');
-        setSortStat('');
-        setLoading(false)        
+        window.location.reload();       
     };
 
     return(
