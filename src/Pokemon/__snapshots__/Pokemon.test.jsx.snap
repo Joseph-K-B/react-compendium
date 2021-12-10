@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render individual pokemon 1`] = `
+<div>
+  <figure
+    aria-label="pokemonFigure"
+    class="pokemonFigure"
+  >
+    <h2 />
+    <img
+      aria-label="pokemonName"
+    />
+    <h2>
+      Type
+    </h2>
+    <h3 />
+    <ul>
+      <li>
+        Secondary type: 
+      </li>
+      <li>
+        abilitiy: 
+      </li>
+      <li>
+        ability: 
+      </li>
+      <li>
+        hidden: 
+      </li>
+    </ul>
+  </figure>
+</div>
+`;

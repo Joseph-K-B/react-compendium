@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render filter form controls 1`] = `
+<div>
+  <section
+    class="filterForm"
+  >
+    <div
+      aria-label="sortType"
+      class="sortType"
+    >
+      <h3>
+        Type
+      </h3>
+      <select
+        class="dropDown"
+      >
+        <option
+          value="all"
+        >
+          All
+        </option>
+        <option />
+      </select>
+    </div>
+  </section>
+</div>
+`;

@@ -1,0 +1,80 @@
+.sortSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+}
+
+.sortOrder {
+    display: flex;
+    flex-direction: column;
+    margin: 7%;
+}
+
+.sortStat {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 5%;
+}
+
+.sortStat select {
+    color: white;
+    background-color: #393E41;
+    box-shadow: 0 0 5px 3px red;
+    text-align: center;
+    height: 2rem;
+    width: 7rem;
+    -webkit-appearance: none;
+}
+
+.sortStat select:hover {
+    color: black;
+    background-color: #D3D0CB;
+}
+
+button {
+    margin: 15%;
+}
+
+.resetBtn {
+    align-items: center;
+    background-image: linear-gradient(144deg,red, white 50%,red);
+    border: 0;
+    border-radius: 8px;
+    color: #D3D0CB;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    justify-content: center;
+    max-width: 70%;
+    min-width: 15rem;
+    padding: 3px;
+    cursor: crosshair;
+  }
+  
+  .resetBtn:active,
+  .resetBtn:hover {
+    outline: 0;
+    color: black;
+    
+  }
+  
+  .resetBtn span {
+    background-color: #393E41;
+    border-radius: 2rem;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+  }
+  
+  .resetBtn:hover span {
+    background: none;
+  }
+  
+  @media (min-width: 6.5rem) {
+    .resetBtn {
+      font-size: 1.5rem;
+      min-width: 6.5rem;
+    }
+  }

@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render input field and button for search 1`] = `
+<div>
+  <form
+    aria-label="searchForm"
+    class="searchForm"
+  >
+    <h3>
+      Name
+    </h3>
+    <label
+      class="searchLabel"
+      for="search"
+    />
+    <input
+      aria-label="inputField"
+      class="searchInput"
+      type="text"
+      value=""
+    />
+    <button
+      aria-label="button"
+      class="searchBtn"
+    >
+      <span>
+        Submit
+      </span>
+    </button>
+  </form>
+</div>
+`;

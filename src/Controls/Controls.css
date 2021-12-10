@@ -1,0 +1,21 @@
+.controls{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    /* border: solid white 0.25rem; */
+}
+
+.filterDiv{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.filterForm {
+    width: 35%;
+}
+
+.searchDiv {
+    width: 40%;
+}

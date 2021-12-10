@@ -1,0 +1,41 @@
+.filterForm {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    /* align-items: center; */
+    width: 100%;
+    height: 100%;
+    /* border: solid red 0.25rem; */
+}
+
+.sortType {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 5%;
+}
+
+.sortType select {
+    color: #D3D0CB;
+    background-color: #393E41;
+    box-shadow: 0 0 5px 3px red;
+    text-align: center;
+    height: 2rem;
+    width: auto;
+    -webkit-appearance: none;
+}
+
+.sortType select:hover {
+    color: black;
+    background-color: #D3D0CB;
+}
+
+
+
+/* .pageBtn {
+    max-height: 3rem;
+    max-width: 5rem;
+    margin: 5%;
+} */
+
